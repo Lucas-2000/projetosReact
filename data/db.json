@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "titulo": "Cancêr de prostata",
+      "detalhes": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "categoria": "doenças",
+      "id": 1
+    },
+    {
+      "titulo": "O que fazer no dia a dia",
+      "detalhes": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
+      "categoria": "dicas",
+      "id": 2
+    },
+    {
+      "titulo": "Como prevenir",
+      "detalhes": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "categoria": "prevenção",
+      "id": 3
+    },
+    {
+      "titulo": "Campanha de prevenção",
+      "detalhes": "Data de inicio 01/11",
+      "categoria": "prevenção",
+      "id": 4
+    }
+  ]
+}

@@ -1,24 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './componentes/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Feed from './paginas/Feed'
+import Criar from './paginas/Criar'
+import Campanha from './paginas/Campanha'
+import Dados from './paginas/Dados'
+import Contato from './paginas/Contato'
+import Doencas from './paginas/Doencas';
+import Galeria from './paginas/Galeria';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { indigo } from '@material-ui/core/colors';
+
+const tema = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#fefefe'
+    },
+    secondary: indigo,
+  },
+  typography: {
+    fontFamily: 'Quicksand',
+    fontWeightLight: 400,
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 700
+  }
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={tema}>
+      <Navbar></Navbar>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Feed />
+          </Route>
+          <Route path="/criar">
+            <Criar />
+          </Route>
+          <Route path="/campanha">
+            <Campanha />
+          </Route>
+          <Route path="/dados">
+            <Dados />
+          </Route>
+          <Route path="/doencas">
+            <Doencas />
+          </Route>
+          <Route path="/galeria">
+            <Galeria />
+          </Route>
+          <Route path="/contato">
+            <Contato />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
