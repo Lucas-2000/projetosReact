@@ -14,29 +14,29 @@ const useStyles = makeStyles({
 const Criar = () => {
     const classes = useStyles()
     const history = useHistory()
-    const [title, setTitle] = useState('')
-    const [details, setDetails] = useState('')
-    const [titleError, setTitleError] = useState(false)
-    const [detailsError, setDetailsError] = useState(false)
-    const [category, setCategory] = useState('doencas')
+    const [titulo, setTitulo] = useState('')
+    const [detalhes, setDetalhes] = useState('')
+    const [tituloError, setTituloError] = useState(false)
+    const [detalhesError, setDetalhesError] = useState(false)
+    const [categoria, setCategoria] = useState('doencas')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setTitleError(false)
-        setDetailsError(false)
+        setTituloError(false)
+        setDetalhesError(false)
 
-        if (title == '') {
-            setTitleError(true)
+        if (titulo == '') {
+            setTituloError(true)
         }
-        if (details == '') {
-            setDetailsError(true)
+        if (detalhes == '') {
+            setDetalhesError(true)
         }
 
-        if (title && details) {
+        if (titulo && detalhes) {
             fetch('http://localhost:8000/posts', {
                 method: 'POST',
                 headers: {"Content-type": "application/json"},
-                body: JSON.stringify({ title, details, category })
+                body: JSON.stringify({ titulo, detalhes, categoria })
             }).then(() => history.push('/'))
         }
     }
@@ -50,17 +50,17 @@ const Criar = () => {
             <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <TextField
                     className={classes.field}
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) => setTitulo(e.target.value)}
                     label="Título do post"
                     variant="outlined"
                     color="secondary"
                     fullWidth
                     required
-                    error={titleError}
+                    error={tituloError}
                 />
                 <TextField
                     className={classes.field}
-                    onChange={(e) => setDetails(e.target.value)}
+                    onChange={(e) => setDetalhes(e.target.value)}
                     label="Detalhes"
                     variant="outlined"
                     color="secondary"
@@ -68,12 +68,12 @@ const Criar = () => {
                     rows={4}
                     fullWidth
                     required
-                    error={detailsError}
+                    error={detalhesError}
                 />
 
                 <FormControl className={classes.field}>
                     <FormLabel>Categoria</FormLabel>
-                    <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+                    <RadioGroup value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                         <FormControlLabel value="doenças" control={<Radio />} label="Doenças" />
                         <FormControlLabel value="dicas" control={<Radio />} label="Dicas" />
                         <FormControlLabel value="prevenção" control={<Radio />} label="Prevenção" />

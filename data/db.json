@@ -23,6 +23,12 @@
       "detalhes": "Data de inicio 01/11",
       "categoria": "prevenção",
       "id": 4
+    },
+    {
+      "titulo": "Se cuide",
+      "detalhes": "Ninguém no mundo está livre de ser abalado por uma doença, seja ela física ou mental. Queremos ainda mais conscientizar a população masculina da necessidade de cuidar do seu corpo e também da mente. v Ser homem é também se cuidar: é praticar exercícios, ter uma alimentação equilibrada, parar de fumar, praticar sexo seguro, cuidar da saúde mental e, também, fazer o exame da próstata. Siga as nossas dicas e garanta uma vida mais longa e saudável.",
+      "categoria": "dicas",
+      "id": 5
     }
   ]
 }

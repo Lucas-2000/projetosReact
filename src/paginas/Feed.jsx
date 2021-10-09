@@ -1,6 +1,7 @@
 import { Container, Grid, Paper } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import PostsCard from '../componentes/PostsCard'
+import Masonry from 'react-masonry-css'
 
 const Feed = () => {
 
@@ -12,15 +13,25 @@ const Feed = () => {
             .then(data => setPosts(data))
     }, [])
 
+
+    const breakpoints = {
+        default: 3,
+        1100: 2,
+        700: 1
+    };
+
     return (
         <Container>
-            <Grid container spacing={3} >
+            <Masonry
+                breakpointCols={breakpoints}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column">
                 {posts.map(post => (
-                    <Grid key={post.id} xs={12} md={6} lg={4}>
-                    <PostsCard post={post} />
-                    </Grid>
+                    <div key={post.id}>
+                        <PostsCard post={post} />
+                    </div>
                 ))}
-            </Grid>
+            </Masonry>
         </Container>
     )
 }

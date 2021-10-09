@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './componentes/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Feed from './paginas/Feed'
 import Criar from './paginas/Criar'
@@ -10,6 +9,7 @@ import Doencas from './paginas/Doencas';
 import Galeria from './paginas/Galeria';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { indigo } from '@material-ui/core/colors';
+import Layout from './componentes/Layout';
 
 const tema = createMuiTheme({
   palette: {
@@ -30,31 +30,32 @@ const tema = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={tema}>
-      <Navbar></Navbar>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Feed />
-          </Route>
-          <Route path="/criar">
-            <Criar />
-          </Route>
-          <Route path="/campanha">
-            <Campanha />
-          </Route>
-          <Route path="/dados">
-            <Dados />
-          </Route>
-          <Route path="/doencas">
-            <Doencas />
-          </Route>
-          <Route path="/galeria">
-            <Galeria />
-          </Route>
-          <Route path="/contato">
-            <Contato />
-          </Route>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <Feed />
+            </Route>
+            <Route path="/criar">
+              <Criar />
+            </Route>
+            <Route path="/campanha">
+              <Campanha />
+            </Route>
+            <Route path="/dados">
+              <Dados />
+            </Route>
+            <Route path="/doencas">
+              <Doencas />
+            </Route>
+            <Route path="/galeria">
+              <Galeria />
+            </Route>
+            <Route path="/contato">
+              <Contato />
+            </Route>
+          </Switch>
+        </Layout>
       </Router>
     </ThemeProvider>
   );
