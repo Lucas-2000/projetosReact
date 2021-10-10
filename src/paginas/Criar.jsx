@@ -43,7 +43,7 @@ const Criar = () => {
 
     return (
         <Container>
-            <Typography variant="h6" component="h2" color="textSecondary" gutterBottom>
+            <Typography variant="h6" component="h2" gutterBottom>
                 Criar novo Post
             </Typography>
 
