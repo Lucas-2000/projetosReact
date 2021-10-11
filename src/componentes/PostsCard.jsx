@@ -2,6 +2,7 @@ import { Avatar, Button, Card, CardActionArea, CardActions, CardContent, CardHea
 import { blue, green, pink, red, yellow } from '@material-ui/core/colors'
 import { DeleteOutline, MoreVert, ThumbDownAlt, ThumbUpAlt } from '@material-ui/icons'
 import React from 'react'
+import { FacebookIcon, FacebookShareButton, WhatsappIcon, WhatsappShareButton } from 'react-share'
 
 const useStyles = makeStyles({
     avatar: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
             }
             if (post.categoria == 'prevenção') {
                 return blue[500]
-            } 
+            }
             return pink[500]
         }
     }
@@ -51,9 +52,19 @@ const PostsCard = ({ post }) => {
                     <Button size="small" color="secondary">
                         Compartilhar
                     </Button>
-                    <Button size="small" color="secondary">
-                        Saiba mais
-                    </Button>
+                    <FacebookShareButton
+                        url="http://localhost:3000/"
+                        quote={'Posts sobre o novembro azul'}
+                        hashtag="#NovembroAzul"
+                    >
+                        <FacebookIcon round={true} size={23} />
+                    </FacebookShareButton>
+                    <WhatsappShareButton
+                        url="http://localhost:3000/"
+                        title="Novembro Azul"
+                    >
+                        <WhatsappIcon round={true} size={23} />
+                    </WhatsappShareButton>
                 </CardActions>
             </Card>
         </div>

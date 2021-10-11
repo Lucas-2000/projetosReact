@@ -6,7 +6,6 @@ import Campanha from './paginas/Campanha'
 import Dados from './paginas/Dados'
 import Contato from './paginas/Contato'
 import Doencas from './paginas/Doencas';
-import Galeria from './paginas/Galeria';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { indigo } from '@material-ui/core/colors';
 import Layout from './componentes/Layout';
@@ -47,9 +46,6 @@ function App() {
             </Route>
             <Route path="/doencas">
               <Doencas />
-            </Route>
-            <Route path="/galeria">
-              <Galeria />
             </Route>
             <Route path="/contato">
               <Contato />

@@ -74,11 +74,6 @@ const Layout = ({ children }) => {
             path: '/doencas'
         },
         {
-            text: "Galeria",
-            icon: <PhotoLibraryOutlined color="secondary" />,
-            path: '/galeria'
-        },
-        {
             text: "Contato",
             icon: <MailOutlineOutlined color="secondary" />,
             path: '/contato'
